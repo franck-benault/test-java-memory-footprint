@@ -44,5 +44,6 @@
 	</build>
 	<modules>
 		<module>01Runtime</module>
+		<module>02JAMM</module>
 	</modules>
 </project>
