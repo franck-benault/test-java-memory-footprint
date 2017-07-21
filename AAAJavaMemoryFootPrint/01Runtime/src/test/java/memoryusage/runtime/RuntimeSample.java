@@ -12,12 +12,13 @@ import memoryusage.runtime.MemoryUtil;
 
 public class RuntimeSample {
 
+	private static final int MAX = 5000000;
+	
 	@Test
-	public void test() {
+	public void testWithRuntime() {
 		MemoryUtil.showMemoryWithRuntime();
 		List<String> list = new ArrayList<String>();
 		
-		final int MAX = 50000000;
 		for(int i=1 ; i<MAX; i++) {
 			list.add(""+i);
 			if(i%300000==0) {
@@ -39,7 +40,6 @@ public class RuntimeSample {
 		MemoryUtil.showMemoryWithMxBean();
 		List<String> list = new ArrayList<String>();
 		
-		final int MAX = 50000000;
 		for(int i=1 ; i<MAX; i++) {
 			list.add(""+i);
 			if(i%300000==0) {
