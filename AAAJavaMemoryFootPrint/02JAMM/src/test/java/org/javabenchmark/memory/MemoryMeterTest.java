@@ -9,7 +9,8 @@ public class MemoryMeterTest {
  
     private MemoryMeter meter = new MemoryMeter();
      
-    @Test
+    @SuppressWarnings("restriction")
+	@Test
     public void shouldMeasureMemoryUsage() {
  
         String st1 = "This is the string #1";
@@ -18,7 +19,7 @@ public class MemoryMeterTest {
         String st2 = "This is the string #2 and it has more chars.";
         measure(st2);
          
-        List aList = new ArrayList(0);
+        List<String> aList = new ArrayList<String>(0);
         measure(aList);
          
         aList.add(st1);
@@ -27,6 +28,8 @@ public class MemoryMeterTest {
         aList.add(st2);
         measure(aList);
          
+        System.out.println(
+        		jdk.nashorn.internal.ir.debug.ObjectSizeCalculator.getObjectSize(aList));
     }
  
     private void measure(Object anObject) {
